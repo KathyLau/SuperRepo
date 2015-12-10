@@ -55,6 +55,17 @@ public class SuperArray  {
     if (target.equals( get(i) )) return i;}
 	return -1;}
 
+public int sortSearch(Comparable target){
+  int low = 0; int hi = _lastPos; int index = (low+hi)/2;
+  while (low < hi ){
+    if (get(index).equals(target)){return index;}
+    else if (target.compareTo(get(index))<0){hi = index-1;}
+    else //if (target.compareTo(get(index))>0)
+    {low=index+1;}
+  index=(low+hi)/2;}
+  if (hi >low){return -1;}
+return index;}
+
     public boolean isSorted(){
 	for (int i = 1; i < _size; i++){
     if ( _data[i].compareTo(_data[i-1]) < 0 )
@@ -78,9 +89,11 @@ public class SuperArray  {
      	a.add(r3);
      	a.add(r1);
      	System.out.println(a);
-     	System.out.println(a.linSearch(b));
-     	System.out.println(a.linSearch(r3));
-     	System.out.println(a.isSorted());
+     	//System.out.println(a.linSearch(b));
+     	//System.out.println(a.linSearch(r3));
+     	if (!(a.isSorted())){
+     	System.out.println(a.linsearch(b));}
+     	else{System.out.println(a.sortSearch(b));}
        }//end main
 
 }//end class
