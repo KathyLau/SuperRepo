@@ -55,6 +55,7 @@ public class SuperArray  {
     if (target.equals( get(i) )) return i;}
 	return -1;}
 
+//MORE EFFICIENT SEARCH FOR SORTED ARRAYS
 public int sortSearch(Comparable target){
   int low = 0; int hi = _lastPos; int index = (low+hi)/2;
   while (low < hi ){
